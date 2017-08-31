@@ -7,6 +7,7 @@ Added a binary in the bin folder.
 Commandline usage for extra args.
 
 Touch2Tuio.exe host port startFullscreen
+
 example:
 Touch2Tuio.exe 10.200.10.179 3333 f
 
