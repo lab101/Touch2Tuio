@@ -42,9 +42,12 @@ class Touch2TuioApp : public App {
 
  TuioServer *tuioServer;
  TuioTime frameTime;
+ std::string host;
+ int port;
 
 
  std::map<int, CursorInfo> touches;
+ ci::Font mFont;
 
   public:
 	void setup() override;
@@ -75,9 +78,10 @@ void Touch2TuioApp::setup()
 	TuioTime::initSession();
 	frameTime = TuioTime::getSessionTime();
 	
+	mFont = Font("Arial", 30);
 
-	string host = "127.0.0.1";
-	int  port = 3333;
+	host = "127.0.0.1";
+	port = 3333;
 	
 	auto args = getCommandLineArgs();
 	if (args.size() > 1){
@@ -216,7 +220,12 @@ void Touch2TuioApp::update()
 void Touch2TuioApp::draw()
 {
 	gl::clear( Color( 0, 0, 0 ) ); 
-	gl::drawString("ative touches: " + toString(touches.size()), vec2(20, 20));
+	gl::drawString("TUIO Sender: " + host + ":" +  toString(port), vec2(20, 20), Color(1, 1, 1), mFont);
+	gl::drawString("active touches: " + toString(touches.size()), vec2(20, 50), Color(1, 1, 1), mFont);
+
+	for (auto& t : touches){
+		ci::gl::drawSolidCircle(t.second.position, 20, 12);
+	}
 }
 
 CINDER_APP(Touch2TuioApp, RendererGl, prepareSettings)
