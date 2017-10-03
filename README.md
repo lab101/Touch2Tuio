@@ -11,6 +11,8 @@ Touch2Tuio.exe host port startFullscreen
 example:
 Touch2Tuio.exe 10.200.10.179 3333 f
 
+added the ability to generate automated touches for stresstesting.
+Press r to toggle this feature.
 
 
 [![Demo video](https://image.ibb.co/dKeBxQ/Screen_Shot_2017_08_31_at_13_26_20.png)](https://vimeo.com/231852693)

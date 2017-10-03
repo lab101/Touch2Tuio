@@ -217,10 +217,12 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ClCompile Include="..\src\RobotTouch.cpp" />
     <ClCompile Include="..\src\Touch2TuioApp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Resources.h" />
+    <ClInclude Include="..\src\RobotTouch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
